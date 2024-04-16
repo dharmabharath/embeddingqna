@@ -176,6 +176,17 @@ try:
 
     col1, col2, col3 = st.columns([2,2,2])
     with col1:
+        st.markdown("""
+    <style>
+        .css-1x8cf1d {
+            background-color: #FF5733;
+            color: white;
+        }
+                    .css-z5fcl4{
+                      background-color: #646871;
+                    }
+    </style>
+""", unsafe_allow_html=True)
         st.button("Check deployment", on_click=check_deployment)
     with col3:
         with st.expander("Settings"):

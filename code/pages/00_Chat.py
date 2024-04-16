@@ -4,6 +4,7 @@ from utilities.helper import LLMHelper
 import regex as re
 import os
 from random import randint
+import traceback 
 
 def clear_chat_data():
     st.session_state['chat_history'] = []
