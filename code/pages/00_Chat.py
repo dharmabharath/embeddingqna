@@ -4,7 +4,6 @@ from utilities.helper import LLMHelper
 import regex as re
 import os
 from random import randint
-import traceback
 
 with open('chat.css', 'r') as css_file:
     custom_css = css_file.read()
