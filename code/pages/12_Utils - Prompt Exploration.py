@@ -2,7 +2,8 @@ import streamlit as st
 import os
 import traceback
 from utilities.helper import LLMHelper
-
+with open('promptexploration.css', 'r') as css_file:
+    custom_css = css_file.read()
 def get_prompt():
     return f"{st.session_state['doc_text']}\n{st.session_state['input_prompt']}"
    
@@ -20,6 +21,23 @@ def process_all(data):
     st.session_state['data_processed'] = llm_helper.vector_store.get_prompt_results().to_csv(index=False)
 
 try:
+    st.set_page_config(
+        page_title="QuadraopenAI",
+        page_icon="images/quadrafavicon.png",
+        layout="wide"
+    )
+    st.markdown(f'<style>{custom_css}</style>', unsafe_allow_html=True)
+    st.markdown("""<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+                <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+                <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.6/dist/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+                """
+                ,unsafe_allow_html=True)
+    logo_url = 'images/quadralogo.png'
+    st.sidebar.image(logo_url)
+
+    st.text('Utilis Prompt Exploration')
+    # Set page layout to wide screen and m
     # Set page layout to wide screen and menu item
     menu_items = {
 	'Get help': None,
@@ -29,7 +47,7 @@ try:
 	 Embedding testing application.
 	'''
     }
-    st.set_page_config(layout="wide", menu_items=menu_items)
+    # st.set_page_config(layout="wide", menu_items=menu_items)
 
     if not 'data_processed' in st.session_state:
         st.session_state['data_processed'] = None

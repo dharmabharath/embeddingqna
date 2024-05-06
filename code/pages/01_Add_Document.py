@@ -9,12 +9,16 @@ from utilities.helper import LLMHelper
 import uuid
 from redis.exceptions import ResponseError 
 from urllib import parse
+
+
+with open('adddocument.css', 'r') as css_file:
+    custom_css = css_file.read()
     
 def upload_text_and_embeddings():
     file_name = f"{uuid.uuid4()}.txt"
     source_url = llm_helper.blob_client.upload_file(st.session_state['doc_text'], file_name=file_name, content_type='text/plain; charset=utf-8')
     llm_helper.add_embeddings_lc(source_url) 
-    st.success("Embeddings added successfully.")
+    st.toast("Embeddings added successfully.",icon="✅")
 
 def remote_convert_files_and_add_embeddings(process_all=False):
     url = os.getenv('CONVERT_ADD_EMBEDDINGS_URL')
@@ -23,7 +27,7 @@ def remote_convert_files_and_add_embeddings(process_all=False):
     try:
         response = requests.post(url)
         if response.status_code == 200:
-            st.success(f"{response.text}\nPlease note this is an asynchronous process and may take a few minutes to complete.")
+            st.toast(f"{response.text}\nPlease note this is an asynchronous process and may take a few minutes to complete.",icon="✅")
         else:
             st.error(f"Error: {response.text}")
     except Exception as e:
@@ -38,7 +42,7 @@ def add_urls():
     for url in urls:
         if url:
             llm_helper.add_embeddings_lc(url)
-            st.success(f"Embeddings added successfully for {url}")
+            st.toast(f"Embeddings added successfully for {url}",icon="✅")
 
 def upload_file(bytes_data: bytes, file_name: str):
     # Upload a new file
@@ -49,6 +53,23 @@ def upload_file(bytes_data: bytes, file_name: str):
 
 
 try:
+    st.set_page_config(
+        page_title="QuadraopenAI",
+        page_icon="images/quadrafavicon.png",
+        layout="wide"
+    )
+    st.markdown(f'<style>{custom_css}</style>', unsafe_allow_html=True)
+    st.markdown("""<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+                <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+                <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.6/dist/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+                """
+                ,unsafe_allow_html=True)
+    logo_url = 'images/quadralogo.png'
+    st.sidebar.image(logo_url)
+    st.text('Add Document')
+
+
     # Set page layout to wide screen and menu item
     menu_items = {
 	'Get help': None,
@@ -58,14 +79,15 @@ try:
 	 Embedding testing application.
 	'''
     }
-    st.set_page_config(layout="wide", menu_items=menu_items)
+    # st.set_page_config(layout="wide", menu_items=menu_items)
 
     llm_helper = LLMHelper()
-
-    with st.expander("Add a single document to the knowledge base", expanded=True):
-        st.write("For heavy or long PDF, please use the 'Add documents in batch' option below.")
-        st.checkbox("Translate document to English", key="translate")
-        uploaded_file = st.file_uploader("Upload a document to add it to the knowledge base", type=['pdf','jpeg','jpg','png', 'txt'])
+    st.image(os.path.join('images','adddocument.png'))
+    with st.expander("Add a single document to the knowledge base", expanded=False): 
+        # st.image(os.path.join('images','expanderclose.png')) 
+        # st.image(os.path.join('images','uploadbutton.png'))
+        uploaded_file = st.file_uploader("", type=['pdf','jpeg','jpg','png', 'txt'])
+     
         if uploaded_file is not None:
             # To read file as bytes:
             bytes_data = uploaded_file.getvalue()
@@ -82,21 +104,31 @@ try:
                     converted_filename = llm_helper.convert_file_and_add_embeddings(st.session_state['file_url'], st.session_state['filename'], st.session_state['translate'])
                 
                 llm_helper.blob_client.upsert_blob_metadata(uploaded_file.name, {'converted': 'true', 'embeddings_added': 'true', 'converted_filename': parse.quote(converted_filename)})
-                st.success(f"File {uploaded_file.name} embeddings added to the knowledge base.")
+                st.toast(f"File {uploaded_file.name} embeddings added to the knowledge base." ,icon="✅")
+        st.checkbox("Translate document to English", key="translate")
+
+        st.write("For heavy or long PDF, please use the 'Add documents in batch' option below.")
             
             # pdf_display = f'<iframe src="{st.session_state["file_url"]}" width="700" height="1000" type="application/pdf"></iframe>'
 
+
+
+    st.image(os.path.join('images','addtext.png'))
     with st.expander("Add text to the knowledge base", expanded=False):
         col1, col2 = st.columns([3,1])
         with col1: 
-            st.session_state['doc_text'] = st.text_area("Add a new text content and them click on 'Compute Embeddings'", height=600)
+            st.session_state['doc_text'] = st.text_area("", height=250)
 
         with col2:
             st.session_state['embeddings_model'] = st.selectbox('Embeddings models', [llm_helper.get_embeddings_model()['doc']], disabled=True)
             st.button("Compute Embeddings", on_click=upload_text_and_embeddings)
 
+
+
+    st.image(os.path.join('images','addfolder.png'))
     with st.expander("Add documents in Batch", expanded=False):
-        uploaded_files = st.file_uploader("Upload a document to add it to the Azure Storage Account", type=['pdf','jpeg','jpg','png', 'txt'], accept_multiple_files=True)
+        # st.image(os.path.join('images','uploadbutton.png'))
+        uploaded_files = st.file_uploader("", type=['pdf','jpeg','jpg','png', 'txt'], accept_multiple_files=True)
         if uploaded_files is not None:
             for up in uploaded_files:
                 # To read file as bytes:
@@ -109,21 +141,24 @@ try:
                         # Add the text to the embeddings
                         llm_helper.blob_client.upsert_blob_metadata(up.name, {'converted': "true"})
 
-        col1, col2, col3 = st.columns([2,2,2])
+        col1, col3 = st.columns([1,1])
         with col1:
             st.button("Convert new files and add embeddings", on_click=remote_convert_files_and_add_embeddings)
         with col3:
             st.button("Convert all files and add embeddings", on_click=remote_convert_files_and_add_embeddings, args=(True,))
 
-    with st.expander("Add URLs to the knowledge base", expanded=True):
+
+
+    st.image(os.path.join('images','addlink.png'))
+    with st.expander("Add URLs to the knowledge base", expanded=False):
         col1, col2 = st.columns([3,1])
         with col1: 
-            st.session_state['urls'] = st.text_area("Add a URLs and than click on 'Compute Embeddings'", placeholder="PLACE YOUR URLS HERE SEPARATED BY A NEW LINE", height=100)
+            st.session_state['urls'] = st.text_area("", placeholder="PLACE YOUR URLS HERE SEPARATED BY A NEW LINE", height=200)
 
         with col2:
             st.selectbox('Embeddings models', [llm_helper.get_embeddings_model()['doc']], disabled=True, key="embeddings_model_url")
             st.button("Compute Embeddings", on_click=add_urls, key="add_url")
-
+    st.image(os.path.join('images','addview.png'))
     with st.expander("View documents in the knowledge base", expanded=False):
         # Query RediSearch to get all the embeddings
         try:

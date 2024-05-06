@@ -1,0 +1,202 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+[data-testid="stSidebarNav"]::before {
+    content: "Quadra Enterprise QNA";
+    margin-left: 20px;
+    margin-top: 20px;
+    font-size: 23px;
+    position: relative;
+    top: 45px;
+    color: #fff;
+    font-family: "Raleway", sans-serif;
+}
+
+.css-vk3wp9 {
+    background: linear-gradient(to bottom, #24538D, #0A1727);
+}
+
+.css-17lntkn {
+    color: #c5d2de;
+}
+
+.css-pkbazv {
+    color: #fff
+}
+
+.css-183lzff {
+    white-space: pre;
+    font-size: 19px;
+    overflow-x: auto;
+    position: relative;
+    bottom: 0px;
+    font-weight: 600;
+    font-family: "Raleway", sans-serif;
+
+}
+
+.css-164nlkn {
+    display: none;
+}
+
+.css-1x8cf1d>div p {
+    font-size: 20px;
+    margin-left: 51px;
+}
+
+.css-81oif8 {
+    align-items: end;
+    justify-content: end;
+}
+
+.stTextInput {
+    position: fixed;
+    bottom: 0px;
+    z-index: 4;
+    background-color: #fff;
+    height: 93px;
+    /* top: 155px; */
+}
+
+.stTextInput>div>div input {
+    border-color: #24538D;
+    background-color: #fff;
+}
+
+.stTextInput>div {
+    border: 1.5px solid #c0c0c6b9;
+}
+
+.css-81oif8 {
+    color: #c0c0c6;
+}
+
+/* loading colorr */
+.css-1dp5vir {
+    background-image: linear-gradient(90deg, rgb(64 119 211), rgb(128 216 255));
+}
+
+
+/* hide menu button an running*/
+.css-zq5wmm {
+    display: none;
+}
+.css-16idsys p{
+    font-family: "Raleway", sans-serif;
+
+}
+
+.css-79elbk ul {
+    max-height: max-content;
+    font-family: "Raleway", sans-serif;
+
+}
+.css-1vbkxwb p {
+    font-family: "Raleway", sans-serif;
+
+}
+
+
+/* hide full screen preview */
+.e1vs0wn31 {
+    display: none;
+}
+
+
+/* close button style */
+.css-1nm2qww {
+    top: 44px;
+}
+
+.css-ztfqz8 {
+    position: relative;
+    top: 2px;
+    color: #fff;
+}
+
+.css-1nm2qww :hover {
+    background-color: #c0c0c6;
+}
+
+/* quadra logo */
+.css-e3xfei>div>div>div>div>div>div>div {
+    width: 150px;
+    position: relative;
+    bottom: 120px;
+}
+
+.css-1v0mbdj {
+    width: 73px;
+    position: relative;
+    top: 32px;
+    margin-left: 23px;
+    z-index: 3;
+}
+
+.css-z5fcl4 {
+    padding-top: 22px;
+}
+
+.css-5rimss p {
+    color: #1F487B;
+}
+
+
+.css-16idsys p{
+    color: #767676;
+
+}
+div[data-baseweb="textarea"]{
+    border: 2px solid #6f6f6f4d;
+}
+div[data-baseweb="base-input"]>textarea[aria-label="Enter some text to summarize"]{
+    background-color: #ffff;
+}
+
+div[data-baseweb="base-input"] >textarea{
+    background-color: #F1F1F1;
+}
+
+.css-7ym5gk {
+    background-color: #293A60;
+    border-color: #293A60;
+    color: #ffff;
+}
+.css-7ym5gk:hover{
+    background-color: #295ebbad;
+    color: rgba(41, 58, 96, 1);
+    border:2px solid rgba(41, 58, 96, 1);
+}
+
+.css-7ym5gk:focus-visible{
+    box-shadow: rgb(111 166 225 / 50%) 0px 0px 0px 0.2rem;
+}
+
+.css-7ym5gk:active{
+    background-color: #293A60;
+    border-color: #293A60;
+    color: #ffff;
+}
+
+.css-7ym5gk:focus:not(:active){
+    background-color: #293A60;
+    border-color: #293A60;
+    color: #ffff;
+}
+
+div[role="radiogroup"]>label>:nth-child(1){
+    background-color: #293A60;
+}
+@media screen and (min-width:1600px) {
+    .css-e3xfei >div >div >div >div >div >div >div {
+        width: 150px;
+        position: relative;
+      top: 371px;
+    }
+}
+@media screen and (min-width:1500px) and (max-width:1599px){
+    .css-e3xfei >div >div >div >div >div >div >div {
+        width: 150px;
+        position: relative;
+       top: 200px;;
+    }
+}
+

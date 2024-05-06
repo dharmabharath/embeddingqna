@@ -5,6 +5,9 @@ from utilities.helper import LLMHelper
 import streamlit.components.v1 as components
 from urllib import parse
 
+with open('documentmanagement.css', 'r') as css_file:
+    custom_css = css_file.read()
+
 def delete_embeddings_of_file(file_to_delete):
     # Query RediSearch to get all the embeddings - lazy loading
     if 'data_files_embeddings' not in st.session_state:
@@ -58,11 +61,30 @@ def delete_file_and_embeddings(filename=''):
 
 
 def delete_all_files_and_embeddings():
-    files_list = st.session_state['data_files']
-    for filename_dict in files_list:
-        delete_file_and_embeddings(filename_dict['filename'])
+    try:
+
+        files_list = st.session_state['data_files']
+        for filename_dict in files_list:
+            delete_file_and_embeddings(filename_dict['filename'])
+    except:
+        print("error")
 
 try:
+    st.set_page_config(
+        page_title="QuadraopenAI",
+        page_icon="images/quadrafavicon.png",
+        layout="wide"
+    )
+    st.markdown(f'<style>{custom_css}</style>', unsafe_allow_html=True)
+    st.markdown("""<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+                <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+                <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.6/dist/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.2.1/dist/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+                """
+                ,unsafe_allow_html=True)
+    logo_url = 'images/quadralogo.png'
+    st.sidebar.image(logo_url)
+    st.text('Document Management')
     # Set page layout to wide screen and menu item
     menu_items = {
 	'Get help': None,
@@ -73,7 +95,7 @@ try:
 	Document Reader Sample Demo.
 	'''
     }
-    st.set_page_config(layout="wide", menu_items=menu_items)
+    # st.set_page_config(layout="wide", menu_items=menu_items)
 
     hide_streamlit_style = """
                 <style>

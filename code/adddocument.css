@@ -1,0 +1,303 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+[data-testid="stSidebarNav"]::before {
+    content: "Quadra Enterprise QNA";
+    margin-left: 20px;
+    margin-top: 20px;
+    font-size: 23px;
+    position: relative;
+    top: 45px;
+    color: #fff;
+    font-family: "Raleway", sans-serif;
+}
+
+.css-vk3wp9 {
+    background: linear-gradient(to bottom, #24538D, #0A1727);
+}
+
+.css-17lntkn {
+    color: #c5d2de;
+}
+
+.css-pkbazv {
+    color: #fff
+}
+
+.css-183lzff {
+    white-space: pre;
+    font-size: 19px;
+    overflow-x: auto;
+    position: relative;
+    font-weight: 600;
+    font-family: "Raleway", sans-serif;
+    bottom: 77px;
+}
+.css-164nlkn {
+    display: none;
+}
+
+.css-1x8cf1d>div p {
+    font-size: 20px;
+    margin-left: 51px;
+}
+
+.css-81oif8 {
+    align-items: end;
+    justify-content: end;
+}
+
+.stTextInput {
+    position: fixed;
+    bottom: 0px;
+    z-index: 4;
+    background-color: #fff;
+    height: 93px;
+    /* top: 155px; */
+}
+
+.stTextInput>div>div input {
+    border-color: #24538D;
+    background-color: #fff;
+}
+
+.stTextInput>div {
+    border: 1.5px solid #c0c0c6b9;
+}
+
+.css-81oif8 {
+    color: #c0c0c6;
+}
+
+/* loading colorr */
+.css-1dp5vir {
+    background-image: linear-gradient(90deg, rgb(64 119 211), rgb(128 216 255));
+}
+
+
+/* hide menu button an running*/
+.css-zq5wmm {
+    display: none;
+}
+
+.css-79elbk ul {
+    max-height: max-content;
+    font-family: "Raleway", sans-serif;
+
+}
+.css-1fttcpj{
+    font-family: "Raleway", sans-serif;
+}
+.css-l2w5f7{
+    font-family: "Raleway", sans-serif;
+}
+.css-1vbkxwb p {
+    font-family: "Raleway", sans-serif;
+}
+.css-5rimss p{
+    font-family: "Raleway", sans-serif;
+}
+.css-1vbkxwb p{
+    font-family: "Raleway", sans-serif;
+}
+
+
+/* hide full screen preview */
+.e1vs0wn31 {
+    display: none;
+}
+
+
+/* close button style */
+.css-1nm2qww {
+    top: 44px;
+}
+
+.css-ztfqz8 {
+    position: relative;
+    top: 2px;
+    color: #fff;
+}
+
+.css-1nm2qww :hover {
+    background-color: #c0c0c6;
+}
+
+/* quadra logo */
+.css-e3xfei>div>div>div>div>div>div>div {
+    width: 150px;
+    position: relative;
+    bottom: 120px;
+}
+
+.css-1v0mbdj {
+    width: 73px;
+    position: relative;
+    top: 32px;
+    margin-left: 23px;
+    z-index: 3;
+}
+
+
+/* add document header css */
+
+.css-183lzff {
+    
+}
+.streamlit-expanderHeader:hover{
+    color: #36414F;
+}
+.css-1fcdlhc .streamlit-expanderHeader:hover svg {
+    fill:  #36414F;
+}
+/* add image in expander */
+
+.ea3mdgi5>div>div>div>div>div>div>div {
+    width: 24px;
+    position: absolute;
+    top: 27px;
+}
+
+.css-16idsys p {
+    margin-left: 45px;
+    font-family: "Raleway", sans-serif;
+
+}
+
+/* add expander border color */
+.e1epmnam0 ul {
+    border-color: rgb(39 61 195);
+}
+
+/* add document border innerstyle */
+.css-1gulkj5 {
+    background-color: #F3F3F3;
+    border: 2px dashed #BFBFBF;
+}
+
+.e1b2p2ww0 button{
+    width: 147px;
+    background-color: #293A60;
+    color: white;
+}
+.e1b2p2ww0 button:hover{
+    border-color: rgb(44 70 105);
+    color: rgb(252 252 255);
+}
+.e1b2p2ww0 button:active{
+    color: rgb(255, 255, 255);
+    border-color: rgb(60, 98, 221);
+    background-color: rgb(60, 98, 221);
+}
+.e1b2p2ww0 button:focus-visible{
+    box-shadow: rgba(71, 119, 224, 0.5) 0px 0px 0px 0.2rem;
+}
+.e1b2p2ww0 button:focus:not(:active) {
+    border-color: rgb(105 140 255);
+    color: rgb(138 165 255);
+}
+
+
+/* drag drop text */
+.css-9ycgxx {
+    color: black;
+    font-size: 13px;
+}
+.css-1aehpvj {
+    font-size: 12px;
+    line-height: 1;
+}
+.css-5rimss p {
+    font-size: 13px;
+    color: rgba(64, 64, 64, 0.69);
+}
+/* check box */
+.stCheckbox label span{
+    border: 2px solid black;
+}
+/* .stCheckbox label span {
+    background-color: rgb(36 79 141);
+} */
+.css-1vbkxwb p {
+    font-size: 14px;
+    color: black;
+}
+
+/* add text design */
+.e1y5xkzn3 div{
+    margin-left: -43px;
+    color: black;
+}
+
+/* add text button design */
+.css-13izhro {
+    top: 25px;
+}
+.ef3psqc11{
+    background-color: white;
+}
+.ef3psqc11:active {
+    color: rgb(255, 255, 255) !important;
+    border-color: rgb(60, 98, 221);
+    background-color: rgb(60, 98, 221);
+}
+.ef3psqc11:focus:not(:active) {
+    border-color: rgb(105 140 255);
+    color: rgb(138 165 255);
+}
+.ef3psqc11:focus-visible{
+    box-shadow: rgba(71, 119, 224, 0.5) 0px 0px 0px 0.2rem;
+}
+.ef3psqc11:hover{
+    border-color: rgb(44 70 105);
+}
+
+.css-1lp7pgu{
+    background-color: rgb(201, 19, 19) !important;
+}
+
+.stSelectbox div{
+background-color: white;
+}
+
+.css-1om1ktf div{
+    z-index: 23;
+}
+
+.css-1om1ktf div{
+    border-color: azure;
+}
+
+.css-1kyxreq{
+    position:absolute;
+}
+
+.css-t1ikei {
+    top: 28px;
+}
+.css-1om1ktf{
+    position: relative;
+    bottom: 20px;
+}
+
+
+.css-ocqkz7 :nth-child(1) div div div div button{
+    background-color:#293A60;
+}
+
+.css-ocqkz7 :nth-child(1) div div div div button div p{
+  color: #fff;
+}
+
+@media screen and (min-width:1600px) {
+    .css-e3xfei >div >div >div >div >div >div >div {
+        width: 150px;
+        position: relative;
+      top: 371px;
+    }
+}
+@media screen and (min-width:1500px) and (max-width:1599px){
+    .css-e3xfei >div >div >div >div >div >div >div {
+        width: 150px;
+        position: relative;
+       top: 200px;;
+    }
+}

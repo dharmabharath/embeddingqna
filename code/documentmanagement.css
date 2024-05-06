@@ -1,0 +1,184 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+[data-testid="stSidebarNav"]::before {
+    content: "Quadra Enterprise QNA";
+    margin-left: 20px;
+    margin-top: 20px;
+    font-size: 23px;
+    position: relative;
+    top: 45px;
+    color: #fff;
+    font-family: "Raleway", sans-serif;
+
+}
+
+.css-vk3wp9 {
+    background: linear-gradient(to bottom, #24538D, #0A1727);
+}
+
+.css-17lntkn {
+    color: #c5d2de;
+}
+
+.css-pkbazv {
+    color: #fff
+}
+
+.css-183lzff {
+    white-space: pre;
+    font-size: 19px;
+    overflow-x: auto;
+    position: relative;
+    bottom: 77px;
+    font-weight: 600;
+    font-family: "Raleway", sans-serif;
+}
+
+.css-164nlkn {
+    display: none;
+}
+
+.css-1x8cf1d>div p {
+    font-size: 20px;
+    margin-left: 51px;
+}
+
+.css-81oif8 {
+    align-items: end;
+    justify-content: end;
+}
+
+.stTextInput {
+    position: fixed;
+    bottom: 0px;
+    z-index: 4;
+    background-color: #fff;
+    height: 93px;
+    /* top: 155px; */
+}
+
+.stTextInput>div>div input {
+    border-color: #24538D;
+    background-color: #fff;
+}
+
+.stTextInput>div {
+    border: 1.5px solid #c0c0c6b9;
+}
+
+.css-81oif8 {
+    color: #c0c0c6;
+}
+
+/* loading colorr */
+.css-1dp5vir {
+    background-image: linear-gradient(90deg, rgb(64 119 211), rgb(128 216 255));
+}
+
+
+/* hide menu button an running*/
+.css-zq5wmm {
+    display: none;
+}
+
+.css-79elbk ul {
+    max-height: max-content;
+    font-family: "Raleway", sans-serif;
+}
+.css-1vbkxwb p {
+    font-family: "Raleway", sans-serif;
+}
+.css-16idsys p{
+    color: #767676;
+    font-family: "Raleway", sans-serif;
+}
+
+
+/* hide full screen preview */
+.e1vs0wn31 {
+    display: none;
+}
+
+
+/* close button style */
+.css-1nm2qww {
+    top: 44px;
+}
+
+.css-ztfqz8 {
+    position: relative;
+    top: 2px;
+    color: #fff;
+}
+
+.css-1nm2qww :hover {
+    background-color: #c0c0c6;
+}
+
+/* quadra logo */
+.css-e3xfei>div>div>div>div>div>div>div {
+    width: 150px;
+    position: relative;
+    bottom: 120px;
+}
+
+.css-1v0mbdj {
+    width: 73px;
+    position: relative;
+    top: 32px;
+    margin-left: 23px;
+    z-index: 3;
+}
+
+/* change button color */
+div[data-testid="stVerticalBlock"] :nth-child(11) >div >button{
+    color: rgba(210, 83, 66, 1);
+    border: 2px solid rgba(210, 83, 66, 1);
+    border-radius: 8px;
+}
+div[data-testid="stVerticalBlock"] :nth-child(11) >div >button:active {
+    color: rgb(255, 255, 255);
+    border-color: rgb(183 123 116);
+    background-color: rgb(197 66 48 / 76%);
+}
+div[data-testid="stVerticalBlock"] :nth-child(11) >div >button:hover {
+    border-color: rgb(239 65 42);
+    color: rgb(239 65 42);
+}
+div[data-testid="stVerticalBlock"] :nth-child(11) >div >button:focus-visible {
+    box-shadow: rgb(255 1 1 / 51%) 0px 0px 0px 0.2rem;
+}
+div[data-testid="stVerticalBlock"]:nth-child(11) >div >button:focus:not(:active) {
+    border-color: rgb(239 65 42);
+    color: rgb(239 65 42);
+}
+
+
+div[data-testid="stVerticalBlock"] :nth-child(14) >div >button{
+    background-color: rgb(239 65 42);
+    color: white;
+}
+div[data-testid="stVerticalBlock"] :nth-child(14) >div >button:focus:not(:active){
+    border-color: rgb(255, 75, 75);
+    color: rgb(255, 75, 75);
+    background-color: rgb(255 255 255);
+}
+div[data-testid="stVerticalBlock"] :nth-child(14) >div >button:hover{
+    background-color: rgb(227 114 99);
+}
+
+
+@media screen and (min-width:1600px) {
+    .css-e3xfei >div >div >div >div >div >div >div {
+        width: 150px;
+        position: relative;
+      top: 371px;
+    }
+}
+@media screen and (min-width:1500px) and (max-width:1599px){
+    .css-e3xfei >div >div >div >div >div >div >div {
+        width: 150px;
+        position: relative;
+       top: 200px;;
+    }
+}
