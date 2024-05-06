@@ -140,42 +140,53 @@ try:
                 ,unsafe_allow_html=True)
     logo_url = 'images/quadralogo.png'
     st.sidebar.image(logo_url)
-    card="""
-<div class="row row-cols-1 row-cols-md-2 g-2">
-  <div class="col">
-    <div class="card">
-      <img src="https://cdn.thenewstack.io/media/2021/11/28de6660-screen-shot-2021-11-29-at-6.46.11-am.png" class="card-img-top" alt=",icrosoft">
-      <div class="card-body">
-        <h5 class="card-title">Improved Internal Knowledge Sharing</h5>
-        <p class="card-text">Easily search through vast technical documents, manuals, and reports to find relevant information for troubleshooting, design reference, or regulatory compliance.
-        </p>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card">
-      <img src="https://cdn.thenewstack.io/media/2021/11/28de6660-screen-shot-2021-11-29-at-6.46.11-am.png" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Efficient Research and Development</h5>
-        <p class="card-text">Researchers can rapidly search through scientific literature, clinical trial data, and regulatory documents to find relevant information for drug development and approval processes.
-        </p>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card">
-      <img src="https://cdn.thenewstack.io/media/2021/11/28de6660-screen-shot-2021-11-29-at-6.46.11-am.png" class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Empowered Sales Staff</h5>
-        <p class="card-text">Sales representatives can leverage the search tool to quickly access product specifications, marketing materials, and competitor information to better serve customers.
-        </p>
-      </div>
-    </div>
-  </div>
+#     card="""
+# <div class="row row-cols-1 row-cols-md-2 g-2">
+#   <div class="col">
+#     <div class="card">
+#       <img src="https://cdn.thenewstack.io/media/2021/11/28de6660-screen-shot-2021-11-29-at-6.46.11-am.png" class="card-img-top" alt=",icrosoft">
+#       <div class="card-body">
+#         <h5 class="card-title">Improved Internal Knowledge Sharing</h5>
+#         <p class="card-text">Easily search through vast technical documents, manuals, and reports to find relevant information for troubleshooting, design reference, or regulatory compliance.
+#         </p>
+#       </div>
+#     </div>
+#   </div>
+#   <div class="col">
+#     <div class="card">
+#       <img src="https://cdn.thenewstack.io/media/2021/11/28de6660-screen-shot-2021-11-29-at-6.46.11-am.png" class="card-img-top" alt="...">
+#       <div class="card-body">
+#         <h5 class="card-title">Efficient Research and Development</h5>
+#         <p class="card-text">Researchers can rapidly search through scientific literature, clinical trial data, and regulatory documents to find relevant information for drug development and approval processes.
+#         </p>
+#       </div>
+#     </div>
+#   </div>
+#   <div class="col">
+#     <div class="card">
+#       <img src="https://cdn.thenewstack.io/media/2021/11/28de6660-screen-shot-2021-11-29-at-6.46.11-am.png" class="card-img-top" alt="...">
+#       <div class="card-body">
+#         <h5 class="card-title">Empowered Sales Staff</h5>
+#         <p class="card-text">Sales representatives can leverage the search tool to quickly access product specifications, marketing materials, and competitor information to better serve customers.
+#         </p>
+#       </div>
+#     </div>
+#   </div>
 
-</div>
-"""
-    st.markdown(card, unsafe_allow_html= True)
+# </div>
+# """
+#     st.markdown(card, unsafe_allow_html= True)
+    # def set_background():
+    #     page_bg_img = '''
+    #     <style>
+    #     .css-uf99v8 {
+    #     background-image: url("data:image/jpeg;base64,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");
+    #     background-size: cover;
+    #     }
+    #     </style>
+    #     ''' 
+    #     st.markdown(page_bg_img, unsafe_allow_html=True)
+    # set_background()
     default_prompt = "" 
     default_question = "" 
     default_answer = ""
